@@ -1,0 +1,12 @@
+C:\MIGUEL 24550\Practica4\Practica4\obj\Debug\Practica4.vbprojAssemblyReference.cache
+C:\MIGUEL 24550\Practica4\Practica4\obj\Debug\Practica4.Form1.resources
+C:\MIGUEL 24550\Practica4\Practica4\obj\Debug\Practica4.Resources.resources
+C:\MIGUEL 24550\Practica4\Practica4\obj\Debug\Practica4.vbproj.GenerateResource.cache
+C:\MIGUEL 24550\Practica4\Practica4\obj\Debug\Practica4.vbproj.CoreCompileInputs.cache
+C:\MIGUEL 24550\Practica4\Practica4\bin\Debug\Practica4.exe.config
+C:\MIGUEL 24550\Practica4\Practica4\bin\Debug\Practica4.exe
+C:\MIGUEL 24550\Practica4\Practica4\bin\Debug\Practica4.pdb
+C:\MIGUEL 24550\Practica4\Practica4\bin\Debug\Practica4.xml
+C:\MIGUEL 24550\Practica4\Practica4\obj\Debug\Practica4.exe
+C:\MIGUEL 24550\Practica4\Practica4\obj\Debug\Practica4.xml
+C:\MIGUEL 24550\Practica4\Practica4\obj\Debug\Practica4.pdb
