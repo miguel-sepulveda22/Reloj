@@ -15,4 +15,20 @@
         Dia.Text = Day_o
         Fecha.Text = Date_o
     End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        If Label1.Text = ":" Then
+            Label1.Text = ""
+        ElseIf Label1.Text = "" Then
+            Label1.Text = ":"
+        End If
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        If Config.Visible = False Then
+            Config.Visible = True
+        ElseIf Config.Visible = True Then
+            Config.Visible = False
+        End If
+    End Sub
 End Class
