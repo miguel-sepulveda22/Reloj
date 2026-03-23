@@ -33,13 +33,21 @@ Partial Class Form1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Config = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Reset = New System.Windows.Forms.Button()
+        Me.Start1 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Start = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Segundos = New System.Windows.Forms.Label()
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Tiempo = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Config.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Horas
@@ -132,14 +140,56 @@ Partial Class Form1
         '
         'Config
         '
+        Me.Config.Controls.Add(Me.Panel1)
+        Me.Config.Controls.Add(Me.Label4)
         Me.Config.Controls.Add(Me.ComboBox1)
-        Me.Config.Controls.Add(Me.Button1)
+        Me.Config.Controls.Add(Me.Start)
         Me.Config.Controls.Add(Me.Label2)
-        Me.Config.Location = New System.Drawing.Point(68, 237)
+        Me.Config.Location = New System.Drawing.Point(85, 77)
         Me.Config.Name = "Config"
         Me.Config.Size = New System.Drawing.Size(363, 190)
         Me.Config.TabIndex = 7
         Me.Config.Visible = False
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Tiempo)
+        Me.Panel1.Controls.Add(Me.Reset)
+        Me.Panel1.Controls.Add(Me.Start1)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(286, 190)
+        Me.Panel1.TabIndex = 9
+        Me.Panel1.Visible = False
+        '
+        'Reset
+        '
+        Me.Reset.Location = New System.Drawing.Point(122, 109)
+        Me.Reset.Name = "Reset"
+        Me.Reset.Size = New System.Drawing.Size(75, 23)
+        Me.Reset.TabIndex = 2
+        Me.Reset.Text = "Reset"
+        Me.Reset.UseVisualStyleBackColor = True
+        '
+        'Start1
+        '
+        Me.Start1.Location = New System.Drawing.Point(19, 108)
+        Me.Start1.Name = "Start1"
+        Me.Start1.Size = New System.Drawing.Size(75, 23)
+        Me.Start1.TabIndex = 1
+        Me.Start1.Text = "Start"
+        Me.Start1.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(77, 10)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(120, 24)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Cronometro"
         '
         'ComboBox1
         '
@@ -150,14 +200,14 @@ Partial Class Form1
         Me.ComboBox1.Size = New System.Drawing.Size(179, 21)
         Me.ComboBox1.TabIndex = 8
         '
-        'Button1
+        'Start
         '
-        Me.Button1.Location = New System.Drawing.Point(19, 52)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(47, 46)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Start.Location = New System.Drawing.Point(19, 52)
+        Me.Start.Name = "Start"
+        Me.Start.Size = New System.Drawing.Size(47, 46)
+        Me.Start.TabIndex = 1
+        Me.Start.Text = "Button1"
+        Me.Start.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -177,6 +227,28 @@ Partial Class Form1
         Me.Segundos.Size = New System.Drawing.Size(39, 13)
         Me.Segundos.TabIndex = 9
         Me.Segundos.Text = "Label3"
+        '
+        'Timer3
+        '
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(289, 85)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(71, 13)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Cronometro"
+        '
+        'Tiempo
+        '
+        Me.Tiempo.AutoSize = True
+        Me.Tiempo.Location = New System.Drawing.Point(16, 52)
+        Me.Tiempo.Name = "Tiempo"
+        Me.Tiempo.Size = New System.Drawing.Size(39, 13)
+        Me.Tiempo.TabIndex = 4
+        Me.Tiempo.Text = "Label5"
         '
         'Form1
         '
@@ -198,6 +270,8 @@ Partial Class Form1
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Config.ResumeLayout(False)
         Me.Config.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -213,8 +287,15 @@ Partial Class Form1
     Friend WithEvents Timer2 As Timer
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Config As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Start As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Segundos As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Reset As Button
+    Friend WithEvents Start1 As Button
+    Friend WithEvents Timer3 As Timer
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Tiempo As Label
 End Class

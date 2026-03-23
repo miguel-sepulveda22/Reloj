@@ -1,5 +1,8 @@
 ﻿Public Class Form1
     Dim formato As Boolean = True
+    Dim boton_start As Boolean = False
+    Dim tiempo_crono As Integer = 0
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
         Timer2.Start()
@@ -83,13 +86,51 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Start.Click
         If formato = True Then
-            Button1.Text = "12h"
+            Start.Text = "12h"
             formato = False
         ElseIf formato = False Then
-            Button1.Text = "24h"
+            Start.Text = "24h"
             formato = True
         End If
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub Start1_Click(sender As Object, e As EventArgs) Handles Start1.Click
+        If boton_start = False Then
+            Timer3.Enabled = True
+            boton_start = True
+            Start1.Text = "Stop"
+        ElseIf boton_start = True Then
+            Timer3.Enabled = False
+            boton_start = False
+            Start1.Text = "Start"
+        End If
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+        If Panel1.Visible = False Then
+            Panel1.Visible = True
+        ElseIf Panel1.Visible = True Then
+            Panel1.Visible = False
+        End If
+    End Sub
+
+    Private Sub Reset_Click(sender As Object, e As EventArgs) Handles Reset.Click
+        tiempo_crono = 0
+        Timer3.Enabled = False
+    End Sub
+
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
+        tiempo_crono = tiempo_crono + 1
+        Tiempo.Text = tiempo_crono.ToString()
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class
