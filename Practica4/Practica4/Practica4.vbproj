@@ -128,5 +128,8 @@
   <ItemGroup>
     <None Include="Resources\8cbe8e941ff313a72c65c7d61b713e59.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-timer-clock-animation-cartoon-microphone-time-stopwatch-thumbnail.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

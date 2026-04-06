@@ -100,25 +100,24 @@
 
     End Sub
 
+    Private startTime As DateTime
+    Private elapsed As TimeSpan = TimeSpan.Zero
+
     Private Sub Start1_Click(sender As Object, e As EventArgs) Handles Start1.Click
         If boton_start = False Then
             Timer3.Enabled = True
             boton_start = True
-            Start1.Text = "Stop"
+            Start1.Text = "Stop"t
+            startTime = DateTime.Now
         ElseIf boton_start = True Then
             Timer3.Enabled = False
             boton_start = False
             Start1.Text = "Start"
+            elapsed += DateTime.Now - startTime
         End If
     End Sub
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-        If Panel1.Visible = False Then
-            Panel1.Visible = True
-        ElseIf Panel1.Visible = True Then
-            Panel1.Visible = False
-        End If
-    End Sub
+
 
     Private Sub Reset_Click(sender As Object, e As EventArgs) Handles Reset.Click
         tiempo_crono = 0
@@ -131,6 +130,18 @@
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        If Panel1.Visible = False Then
+            Panel1.Visible = True
+        ElseIf Panel1.Visible = True Then
+            Panel1.Visible = False
+        End If
+    End Sub
+
+    Private Sub Config_Paint(sender As Object, e As PaintEventArgs) Handles Config.Paint
 
     End Sub
 End Class
