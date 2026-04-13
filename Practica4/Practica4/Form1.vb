@@ -152,6 +152,9 @@
 
     End Sub
 
+    Private tiempoRestante As TimeSpan = TimeSpan.Zero
+    Private temporizadorActivo As Boolean = False
+
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         If Panel2.Visible = False Then
             Panel2.Visible = True
@@ -160,7 +163,46 @@
         End If
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub mas1_Click(sender As Object, e As EventArgs) Handles mas1.Click
+        tiempoRestante = tiempoRestante.Add(TimeSpan.FromMinutes(1))
+        Label6.Text = tiempoRestante.ToString("mm\:ss")
+    End Sub
 
+    Private Sub mas5_Click(sender As Object, e As EventArgs) Handles mas5.Click
+        tiempoRestante = tiempoRestante.Add(TimeSpan.FromMinutes(5))
+        Label6.Text = tiempoRestante.ToString("mm\:ss")
+    End Sub
+
+    Private Sub tempstart_Click(sender As Object, e As EventArgs) Handles tempstart.Click
+        If tiempoRestante = TimeSpan.Zero Then
+            MessageBox.Show("Agrega tiempo primero.", "Aviso")
+            MessageBoxButtons.OK, MessageBoxIcon.Warning
+            Exit Sub
+        End If
+
+        If temporizadorActivo = False Then
+            Timer4.Enabled = True
+            temporizadorActivo = True
+            tempstart.Text = "Stop"
+        Else
+            Timer4.Enabled = False
+            temporizadorActivo = False
+            tempstart.Text = "Start"
+        End If
+    End Sub
+
+    Private Sub tempreset_Click(sender As Object, e As EventArgs) Handles tempreset.Click
+        Timer4.Enabled = False
+        tiempoRestante =
+    End Sub
+
+    Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
+        If tiempoRestante.TotalMilliseconds > 0 Then
+            tiempoRestante = tiempoRestante.Subtract(TimeSpan.FromMilliseconds(Timer4.Interval))
+            Label6.Text = tiempoRestante.ToString("mm\:ss")
+        Else
+            Timer4
+
+        End If
     End Sub
 End Class
